@@ -1,118 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <link rel="stylesheet" href="Hojas de estilo/estilos.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Hojas de estilo/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <title>Agustín Ruiz Díaz: Portfolio personal</title>
+</head>
+<body>
+    <header>
+        <nav id="busqueda">
+            <button onclick="location.href='#personal'">Introducción</button>
+            <button onclick="location.href='#habilidades'">Habilidades</button>
+            <button onclick="location.href='#experiencia'">Experiencias</button>
+            <button onclick="location.href='#proyectos'">Proyectos</button>
+            <button onclick="location.href='#contacto'">Contacto y Redes</button>
+        </nav>
+    </header>
 
-    <body>
-
-
-        <div id="personal">
-
+    <main>
+        <section id="personal">
             <h1>Hola! Me presento</h1>
-
             <div class="contenedor1">
-
-                <p> Me llamo Agustín Ruiz Díaz, resido de la ciudad de San Francisco Córdoba y soy un desarrollador web con una sólida experiencia en 
+                <p>Me llamo Agustín Ruiz Díaz, resido en la ciudad de San Francisco Córdoba y soy un desarrollador web con una sólida experiencia en 
                     la creación de aplicaciones dinámicas y receptivas, centrado en ofrecer experiencias de usuario excepcionales. 
                     Además, me especializo en la gestión y optimización de bases de datos, asegurando que las aplicaciones funcionen de manera eficiente y segura. 
                     Con un enfoque en la arquitectura backend y la integridad de los datos, he trabajado en proyectos complejos que requieren un alto rendimiento y escalabilidad. 
                     Mi pasión es combinar un desarrollo web de alta calidad con una estructura de datos robusta, garantizando que cada proyecto no solo se vea bien, 
                     sino que también funcione de manera óptima.
                 </p>
-
                 <img src="Imagenes/foto.jpg" alt="Foto personal" class="imagen">
-
             </div>
+        </section>
 
-        </div>
-
-        <div id="habilidades">
-
+        <section id="habilidades">
             <h2>Algunas de mis habilidades son:</h2>
+            <ol>    
+                <li>Desarrollo Web: Experto en la creación de aplicaciones web 
+                    interactivas utilizando tecnologías como HTML, CSS, JavaScript y frameworks 
+                    modernos como React y Angular. Habilidad para diseñar interfaces de usuario atractivas 
+                    y construir experiencias fluidas.</li>
+                <li>Backend: Dominio de lenguajes como Python y Java, y frameworks como Node.js y Django, para desarrollar lógicas de servidor robustas y escalables.
+                     Experiencia en la implementación de APIs RESTful y microservicios.
+                </li>
+                <li>Bases de Datos: Amplio conocimiento en la gestión y optimización de bases de datos relacionales (MySQL, PostgreSQL) y no relacionales (MongoDB).
+                    Habilidad para diseñar esquemas eficientes, escribir consultas complejas y asegurar la integridad de los datos.
+                </li>
+                <li>Herramientas y DevOps: Competente en el uso de herramientas como Git para control de versiones, 
+                    Docker para la contenedorización, y Jenkins para la automatización de despliegues. 
+                    Familiaridad con la infraestructura en la nube (AWS, Azure) para el despliegue de aplicaciones.
+                </li>
+                <li>Dominio de Idiomas: Inglés avanzado para comunicación técnica y lectura de documentación.
+                    Otros idiomas (como español, francés o alemán) para trabajar en equipos multiculturales y en proyectos globales.
+                </li>
+                <li>Resolución de Problemas: Habilidad para identificar y solucionar problemas técnicos complejos de manera rápida y efectiva.</li>
+            </ol>
+        </section>
 
-                <ol>    
-                    <li>Desarrollo Web: Experto en la creación de aplicaciones web 
-                        interactivas utilizando tecnologías como HTML, CSS, JavaScript y frameworks 
-                        modernos como React y Angular. Habilidad para diseñar interfaces de usuario atractivas 
-                        y construir experiencias fluidas.</li>
-
-                    <li>Backend: Dominio de lenguajes como Python y Java, y frameworks como Node.js y Django, para desarrollar lógicas de servidor robustas y escalables.
-                         Experiencia en la implementación de APIs RESTful y microservicios.
-                    </li>
-
-                    <li>Bases de Datos: Amplio conocimiento en la gestión y optimización de bases de datos relacionales (MySQL, PostgreSQL) y no relacionales (MongoDB).
-                        Habilidad para diseñar esquemas eficientes, escribir consultas complejas y asegurar la integridad de los datos.
-                    </li>
-
-                    <li>
-                        Herramientas y DevOps: Competente en el uso de herramientas como Git para control de versiones, 
-                        Docker para la contenedorización, y Jenkins para la automatización de despliegues. 
-                        Familiaridad con la infraestructura en la nube (AWS, Azure) para el despliegue de aplicaciones.
-                    </li>
-
-                    <li>
-                        Dominio de Idiomas: Inglés avanzado para comunicación técnica y lectura de documentación.
-                        Otros idiomas (como español, francés o alemán) para trabajar en equipos multiculturales y en proyectos globales.
-                    </li>
-
-                    <li>
-                        Resolución de Problemas: Habilidad para identificar y solucionar problemas técnicos complejos de manera rápida y efectiva.
-                    </li>
-                </ol>
-        </div>
-
-        <div id="experiencia">
-
+        <section id="experiencia">
             <h2>¿Qué experiencias he tenido?</h2>
-
-            <ol>
-                <li><h2>Desarrollador Web Full Stack en TechWave Solutions (2021 - Presente)</li></h2>
+            <article>
+                <h3>Desarrollador Web Full Stack en TechWave Solutions (2021 - Presente)</h3>
                 <p>Descripción: En TechWave Solutions, fui responsable del desarrollo completo de aplicaciones web utilizando tecnologías como React y Node.js. Mi trabajo se centró en la construcción de interfaces de usuario intuitivas y la creación de APIs backend escalables.</p>
-                <h3>Logros clave:</h3>
+                <h4>Logros clave:</h4>
                 <ul>
                     <li>Implementé un sistema de autenticación seguro utilizando JWT (JSON Web Tokens) y OAuth2.</li>
                     <li>Optimicé el rendimiento de la base de datos reduciendo el tiempo de consulta en un 40%.</li>
                     <li>Colaboré estrechamente con los equipos de diseño para mejorar la experiencia del usuario, lo que resultó en un aumento del 25% en la retención de usuarios.</li>
                 </ul>
+            </article>
 
-                <li><h2>Especialista en Bases de Datos DataMasters Inc. (2018 - 2021)</h2></li>
+            <article>
+                <h3>Especialista en Bases de Datos DataMasters Inc. (2018 - 2021)</h3>
                 <p>Descripción: En DataMasters, me enfoqué en la administración, diseño y optimización de bases de datos para aplicaciones empresariales de gran escala. Fui responsable de asegurar la integridad y eficiencia de los datos en sistemas críticos.</p>
-                <h3>Logros clave:</h3>
+                <h4>Logros clave:</h4>
                 <ul>
                     <li>Diseñé e implementé una base de datos relacional altamente eficiente que soportaba un crecimiento de usuarios del 300% sin comprometer el rendimiento.</li>
                     <li>Automatizé procesos de respaldo y recuperación de bases de datos, reduciendo el tiempo de inactividad en un 50%</li>
                     <li>Colaboré en la migración de bases de datos locales a la nube (AWS RDS), lo que mejoró la escalabilidad y disponibilidad del sistema.</li>
-
                 </ul>
-            </ol>
-        </div>
+            </article>
+        </section>
 
-        <div id="proyectos">
+        <section id="proyectos">
             <h2>Proyectos en los que he trabajado:</h2>
-
-            <ol>
-                <li><h2>Plataforma de Gestión de Tareas TaskMaster</h2></li>
+            <article>
+                <h3>Plataforma de Gestión de Tareas TaskMaster</h3>
                 <p>TaskMaster es una plataforma web diseñada para equipos de trabajo que necesitan organizar y gestionar sus tareas de manera eficiente. 
                     La aplicación permite la creación, asignación y seguimiento de tareas en tiempo real, con opciones de colaboración y notificaciones 
                     automatizadas.
                 </p>
+            </article>
 
-                <li><h2>Aplicación de E-commerce ShopNow</h2></li>
+            <article>
+                <h3>Aplicación de E-commerce ShopNow</h3>
                 <p>ShopNow es una aplicación de comercio electrónico que permite a los usuarios explorar productos, gestionar carritos de compra y realizar pagos de manera segura. 
                     Desarrollada con Django, PostgreSQL, Stripe API y React, mi contribución incluyó la creación de la lógica de backend para la gestión de pedidos y pagos, 
                     la integración de la API de Stripe para pagos seguros y la optimización del frontend, reduciendo significativamente los tiempos de carga y mejorando la experiencia del usuario.
                 </p>
-            </ol>
-        </div>
+            </article>
+        </section>
 
-        <div id="redes">
+        <section id="contacto">
+            <h2>¿Quieres contactarme?</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdvP24kYA6fdYAmXSd_zA81ZbvIZimMgx37BJmfRfpNUrgIOg/viewform?embedded=true" width="640" height="1085" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </section>
 
+        <section id="redes">
             <h2>Visita mis redes!</h2>
-
             <div class="links">
                 <a href="https://www.instagram.com/thrash_guy/" class="instagram" target="_blank" aria-label="Instagram">
                     <img src="Imagenes/instagramlogo.png" alt="Instagram">
@@ -124,7 +121,13 @@
                     <img src="Imagenes/linkedinlogo.png" alt="LinkedIn">
                 </a>
             </div>
-            
-        </div>
-    </body>
+
+            <div id="contacto">
+                <h2>Contáctame</h2>
+                <p>Email: <a href="mailto:agustinruizdiaz123@gmail.com">agustinruizdiaz123@gmail.com</a></p>
+                <p>Teléfono: <a href="tel:+3564676116">+3564676116</a></p>
+            </div>
+        </section>
+    </main>
+</body>
 </html>

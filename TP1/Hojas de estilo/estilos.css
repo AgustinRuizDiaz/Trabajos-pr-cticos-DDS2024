@@ -1,18 +1,36 @@
-body
+body 
 {
     background-color: moccasin;
     font-family: "Abel", sans-serif;
 }
 
-div
+#busqueda 
 {
-    margin-bottom: 70px;
-    padding: 20px;
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+    margin: 20px 0; 
+}
+
+#busqueda button 
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#busqueda button:hover 
+{
+    background-color: darkviolet; 
 }
 
 #personal 
 {
-
     border-radius: 8px;
     padding: 20px;
     margin: 20px 0;
@@ -25,7 +43,7 @@ div
 #personal h1 
 {
     color: #333;
-    font-size: 36px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
@@ -68,7 +86,8 @@ div
     text-align: center;
 }
 
-#habilidades ol {
+#habilidades ol 
+{
     padding-left: 20px;
 }
 
@@ -99,8 +118,7 @@ div
     text-align: center;
 }
 
-#experiencia ol 
-{
+#experiencia ol {
     padding-left: 20px;
 }
 
@@ -142,10 +160,9 @@ div
 
 #proyectos h2 
 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 #proyectos ol 
@@ -153,17 +170,11 @@ div
     padding-left: 20px;
 }
 
-#proyectos li {
+#proyectos li
+{
     margin-bottom: 20px;
     line-height: 1.6;
     color: #555;
-}
-
-#proyectos h2 
-{
-    color: #007bff;
-    font-size: 20px;
-    margin-bottom: 10px;
 }
 
 #proyectos p 
@@ -171,29 +182,17 @@ div
     margin-bottom: 15px;
 }
 
-
 #redes 
 {
     text-align: center;
     padding: 20px;
-    background-color: #f4f4f4;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#redes 
-{
-    text-align: center;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #redes h2 
 {
     margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    font-family: "Abel", sans-serif;
     font-size: 24px;
     color: #333;
 }
@@ -202,7 +201,7 @@ div
 {
     display: flex;
     justify-content: center;
-    align-items: center; /* Alinea los íconos verticalmente */
+    align-items: center; 
     gap: 15px;
 }
 
@@ -218,43 +217,63 @@ a img
 {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen se ajuste bien al contenedor */
+    object-fit: contain; 
 }
 
 a:hover 
 {
     transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-.instagram img 
-{
-    filter: grayscale(100%);
-}
-
-.github img 
-{
-    filter: grayscale(100%);
-}
-
+.instagram img,
+.github img,
 .linkedin img 
 {
     filter: grayscale(100%);
 }
 
-
-.instagram:hover img 
-{
-    filter: none;
-}
-
-.github:hover img 
-{
-    filter: none;
-}
-
+.instagram:hover img,
+.github:hover img,
 .linkedin:hover img 
 {
     filter: none;
+}
+
+#contacto 
+{
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#contacto h2,
+#contacto p 
+{
+    font-family: "Abel", sans-serif;
+}
+
+#contacto h2 
+{
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+#contacto p 
+{
+    margin: 5px 0;
+    color: #555;
+}
+
+#contacto a 
+{
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#contacto a:hover 
+{
+    color: #0056b3;
 }
