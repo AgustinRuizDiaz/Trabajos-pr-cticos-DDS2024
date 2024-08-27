@@ -4,3 +4,257 @@ body
     font-family: "Abel", sans-serif;
 }
 
+div
+{
+    margin-bottom: 70px;
+    padding: 20px;
+}
+
+#personal 
+{
+
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#personal h1 
+{
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#personal .contenedor1 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#personal p 
+{
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+#personal .imagen 
+{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #007bff;
+}
+
+#habilidades 
+{
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#habilidades h2 
+{
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#habilidades ol {
+    padding-left: 20px;
+}
+
+#habilidades li 
+{
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+#habilidades li::marker 
+{
+    color: #007bff;
+}
+
+#experiencia 
+{
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#experiencia h2 
+{
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#experiencia ol 
+{
+    padding-left: 20px;
+}
+
+#experiencia li 
+{
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+#experiencia h3 
+{
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#experiencia p 
+{
+    margin-bottom: 15px;
+}
+
+#experiencia ul 
+{
+    padding-left: 20px;
+}
+
+#experiencia ul li 
+{
+    margin-bottom: 10px;
+}
+
+#proyectos 
+{
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#proyectos h2 
+{
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#proyectos ol 
+{
+    padding-left: 20px;
+}
+
+#proyectos li {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+#proyectos h2 
+{
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#proyectos p 
+{
+    margin-bottom: 15px;
+}
+
+
+#redes 
+{
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#redes 
+{
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#redes h2 
+{
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+}
+
+.links 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea los íconos verticalmente */
+    gap: 15px;
+}
+
+a 
+{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+a img 
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen se ajuste bien al contenedor */
+}
+
+a:hover 
+{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.instagram img 
+{
+    filter: grayscale(100%);
+}
+
+.github img 
+{
+    filter: grayscale(100%);
+}
+
+.linkedin img 
+{
+    filter: grayscale(100%);
+}
+
+
+.instagram:hover img 
+{
+    filter: none;
+}
+
+.github:hover img 
+{
+    filter: none;
+}
+
+.linkedin:hover img 
+{
+    filter: none;
+}
