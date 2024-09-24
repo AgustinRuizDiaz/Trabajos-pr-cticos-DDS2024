@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Trabajos-pr-cticos-DDS2024/static/css/main.309799a9.css",
+    "main.js": "/Trabajos-pr-cticos-DDS2024/static/js/main.69b9e4bb.js",
+    "static/js/453.533eaec0.chunk.js": "/Trabajos-pr-cticos-DDS2024/static/js/453.533eaec0.chunk.js",
+    "index.html": "/Trabajos-pr-cticos-DDS2024/index.html",
+    "main.309799a9.css.map": "/Trabajos-pr-cticos-DDS2024/static/css/main.309799a9.css.map",
+    "main.69b9e4bb.js.map": "/Trabajos-pr-cticos-DDS2024/static/js/main.69b9e4bb.js.map",
+    "453.533eaec0.chunk.js.map": "/Trabajos-pr-cticos-DDS2024/static/js/453.533eaec0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.309799a9.css",
+    "static/js/main.69b9e4bb.js"
+  ]
+}
