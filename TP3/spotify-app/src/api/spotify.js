@@ -1,9 +1,13 @@
 import axios from 'axios';
 
-const clientId = '2ebd25e9eb364190aad5c0cdeb6e3dc1';
-const clientSecret = 'c45a0165c7574535b63cca5c306499f0';
-
 const getAuthToken = async () => {
+  const clientId = localStorage.getItem('spotifyClientId');
+  const clientSecret = localStorage.getItem('spotifyClientSecret');
+
+  if (!clientId || !clientSecret) {
+    throw new Error('No se encontraron credenciales de Spotify');
+  }
+
   const tokenUrl = 'https://accounts.spotify.com/api/token';
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
