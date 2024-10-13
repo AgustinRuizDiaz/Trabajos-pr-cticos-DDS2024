@@ -53,9 +53,11 @@ function ArtistDetail() {
   if (!artist) return <div>Cargando...</div>;
 
   return (
-    <div className="artist-detail">
+    <div className="artist-detail fade-in">
       <button onClick={() => navigate('/')} className="back-button">Volver a la búsqueda</button>
-      <img src={artist.images[0]?.url} alt={artist.name} />
+      <div className="artist-image-container">
+        <img src={artist.images[0]?.url} alt={artist.name} />
+      </div>
       <h2>{artist.name}</h2>
       <p>Popularidad: {artist.popularity}</p>
       <button onClick={toggleFavorite} className="favorite-button">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import ArtistList from '../components/ArtistList';
 import getAuthToken from '../api/spotify';
@@ -36,10 +36,11 @@ function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="container fade-in">
       <header className="main-header">
         <h2>Encuentra Artistas</h2>
         <p>En esta página puedes buscar cualquier artista que quieras y ver sus álbumes, ¡inténtalo!</p>
+        <Link to="/favorite-songs" className="favorite-songs-link button">Ver canciones favoritas</Link>
       </header>
 
       <div className="content-wrapper">
