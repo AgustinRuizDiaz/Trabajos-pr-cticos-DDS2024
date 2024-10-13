@@ -4,21 +4,27 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
   const [clientId, setClientId] = useState('');
   const [clientSecret, setClientSecret] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     const storedClientId = localStorage.getItem('spotifyClientId');
     const storedClientSecret = localStorage.getItem('spotifyClientSecret');
     if (storedClientId && storedClientSecret) {
-      navigate('/');
+      setClientId(storedClientId);
+      setClientSecret(storedClientSecret);
     }
-  }, [navigate]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('spotifyClientId', clientId);
-    localStorage.setItem('spotifyClientSecret', clientSecret);
-    navigate('/');
+    if (clientId && clientSecret) {
+      localStorage.setItem('spotifyClientId', clientId);
+      localStorage.setItem('spotifyClientSecret', clientSecret);
+      navigate('/');
+    } else {
+      setError('Por favor, ingresa tanto el Client ID como el Client Secret.');
+    }
   };
 
   return (
@@ -45,6 +51,7 @@ function Login() {
             required
           />
         </div>
+        {error && <p className="error-message">{error}</p>}
         <button type="submit">Iniciar sesión</button>
       </form>
     </div>

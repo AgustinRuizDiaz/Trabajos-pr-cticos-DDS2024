@@ -51,12 +51,19 @@ function Home() {
     navigate(`/artist/${id}`);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('spotifyClientId');
+    localStorage.removeItem('spotifyClientSecret');
+    navigate('/login');
+  };
+
   return (
     <div className="container fade-in">
       <header className="main-header">
         <h2>Encuentra Artistas</h2>
         <p>En esta página puedes buscar cualquier artista que quieras y ver sus álbumes, ¡inténtalo!</p>
         <Link to="/favorite-songs" className="favorite-songs-link button">Ver canciones favoritas</Link>
+        <button onClick={handleLogout} className="logout-button">Cerrar sesión</button>
       </header>
 
       <div className="content-wrapper">
