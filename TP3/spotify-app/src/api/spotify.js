@@ -1,18 +1,27 @@
 import axios from 'axios';
 
-const clientId = '2ebd25e9eb364190aad5c0cdeb6e3dc1';
-const clientSecret = 'c45a0165c7574535b63cca5c306499f0';
-
 const getAuthToken = async () => {
-  const tokenUrl = 'https://accounts.spotify.com/api/token';
-  const headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
-  };
-  const data = 'grant_type=client_credentials';
+  const clientId = localStorage.getItem('spotifyClientId');
+  const clientSecret = localStorage.getItem('spotifyClientSecret');
 
-  const response = await axios.post(tokenUrl, data, { headers });
-  return response.data.access_token;
+  if (!clientId || !clientSecret) {
+    throw new Error('No se encontraron credenciales de Spotify. Por favor, inicia sesión.');
+  }
+
+  try {
+    const tokenUrl = 'https://accounts.spotify.com/api/token';
+    const headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
+    };
+    const data = 'grant_type=client_credentials';
+
+    const response = await axios.post(tokenUrl, data, { headers });
+    return response.data.access_token;
+  } catch (error) {
+    console.error('Error al obtener el token de autenticación:', error);
+    throw new Error('No se pudo obtener el token de autenticación. Por favor, verifica tus credenciales e intenta de nuevo.');
+  }
 };
 
 export default getAuthToken;

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import getAuthToken from '../api/spotify';
 
 function ArtistDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [artist, setArtist] = useState(null);
   const [albums, setAlbums] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const fetchArtistDetails = async () => {
@@ -28,23 +30,44 @@ function ArtistDetail() {
         },
       });
       setAlbums(albumsResponse.data.items);
+
+      const favorites = JSON.parse(localStorage.getItem('favoriteArtists') || '[]');
+      setIsFavorite(favorites.some(fav => fav.id === id));
     };
 
     fetchArtistDetails();
   }, [id]);
 
+  const toggleFavorite = () => {
+    const favorites = JSON.parse(localStorage.getItem('favoriteArtists') || '[]');
+    if (isFavorite) {
+      const newFavorites = favorites.filter(fav => fav.id !== id);
+      localStorage.setItem('favoriteArtists', JSON.stringify(newFavorites));
+    } else {
+      favorites.push({ id: artist.id, name: artist.name, image: artist.images[0]?.url });
+      localStorage.setItem('favoriteArtists', JSON.stringify(favorites));
+    }
+    setIsFavorite(!isFavorite);
+  };
+
   if (!artist) return <div>Cargando...</div>;
 
   return (
-    <div className="artist-detail">
-      <img src={artist.images[0]?.url} alt={artist.name} />
+    <div className="artist-detail fade-in">
+      <button onClick={() => navigate('/')} className="back-button">Volver a la búsqueda</button>
+      <div className="artist-image-container">
+        <img src={artist.images[0]?.url} alt={artist.name} />
+      </div>
       <h2>{artist.name}</h2>
       <p>Popularidad: {artist.popularity}</p>
+      <button onClick={toggleFavorite} className="favorite-button">
+        {isFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+      </button>
 
       <h3>Álbumes</h3>
       <div className="albums-list">
         {albums.map((album) => (
-          <div key={album.id} className="album-item">
+          <div key={album.id} className="album-item" onClick={() => navigate(`/album/${album.id}`)}>
             <img src={album.images[0]?.url} alt={album.name} />
             <p>{album.name}</p>
             <p>{new Date(album.release_date).getFullYear()}</p>
