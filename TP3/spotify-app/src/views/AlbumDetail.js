@@ -7,24 +7,24 @@ function AlbumDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [album, setAlbum] = useState(null);
-  const [favoriteSongs, setFavoriteSongs] = useState([]); 
-
-  useEffect(() => {
-    
-    const storedFavorites = JSON.parse(localStorage.getItem('favoriteSongs')) || [];
-    setFavoriteSongs(storedFavorites);
-  }, []);
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
 
   useEffect(() => {
     const fetchAlbumDetails = async () => {
-      const token = await getAuthToken();
+      try {
+        const token = await getAuthToken();
+        const albumResponse = await axios.get(`https://api.spotify.com/v1/albums/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setAlbum(albumResponse.data);
 
-      const albumResponse = await axios.get(`https://api.spotify.com/v1/albums/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setAlbum(albumResponse.data);
+        const storedFavorites = JSON.parse(localStorage.getItem('favoriteSongs') || '[]');
+        setFavoriteSongs(storedFavorites);
+      } catch (error) {
+        console.error('Error al cargar los detalles del álbum:', error);
+      }
     };
 
     fetchAlbumDetails();
@@ -35,7 +35,13 @@ function AlbumDetail() {
     const songIndex = updatedFavorites.findIndex((song) => song.id === track.id);
 
     if (songIndex === -1) {
-      updatedFavorites.push(track);
+      const newFavoriteSong = {
+        id: track.id,
+        name: track.name,
+        artist: { name: album.artists[0].name },
+        album: { id: album.id, name: album.name }
+      };
+      updatedFavorites.push(newFavoriteSong);
     } else {
       updatedFavorites.splice(songIndex, 1);
     }
@@ -43,7 +49,6 @@ function AlbumDetail() {
     setFavoriteSongs(updatedFavorites);
     localStorage.setItem('favoriteSongs', JSON.stringify(updatedFavorites));
   };
-
 
   if (!album) return <div>Cargando...</div>;
 

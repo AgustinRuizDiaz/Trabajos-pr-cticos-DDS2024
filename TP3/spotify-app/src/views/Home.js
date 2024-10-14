@@ -13,8 +13,12 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favoriteArtists') || '[]');
-    setFavoriteArtists(favorites);
+    const loadFavoriteArtists = () => {
+      const favorites = JSON.parse(localStorage.getItem('favoriteArtists') || '[]');
+      setFavoriteArtists(favorites.filter(artist => artist && artist.id)); 
+    };
+
+    loadFavoriteArtists();
   }, []);
 
   const handleSearch = async (searchTerm) => {
@@ -33,10 +37,13 @@ function Home() {
         },
       });
 
-      setArtists(response.data.artists.items);
+      setArtists(response.data.artists.items.filter(artist => artist && artist.id));
     } catch (error) {
       console.error('Error en la búsqueda:', error);
-      if (error.message.includes('No se encontraron credenciales')) {
+      if (error.response && error.response.status === 401) {
+        
+        localStorage.removeItem('spotifyClientId');
+        localStorage.removeItem('spotifyClientSecret');
         navigate('/login');
       } else {
         setError(error.message || 'Ocurrió un error durante la búsqueda. Por favor, intenta de nuevo.');
@@ -48,7 +55,11 @@ function Home() {
   };
 
   const handleArtistClick = (id) => {
-    navigate(`/artist/${id}`);
+    if (id) {
+      navigate(`/artist/${id}`);
+    } else {
+      console.error('ID de artista inválido');
+    }
   };
 
   const handleLogout = () => {
@@ -72,12 +83,16 @@ function Home() {
           <SearchBar onSearch={handleSearch} />
           {isLoading && <p>Cargando...</p>}
           {error && <p className="error-message">{error}</p>}
-          <ArtistList artists={artists} onArtistClick={handleArtistClick} />
+          {artists.length > 0 && <ArtistList artists={artists} onArtistClick={handleArtistClick} />}
         </div>
         
         <div className="favorites-section">
           <h2>Artistas Favoritos</h2>
-          <ArtistList artists={favoriteArtists} onArtistClick={handleArtistClick} />
+          {favoriteArtists.length > 0 ? (
+            <ArtistList artists={favoriteArtists} onArtistClick={handleArtistClick} />
+          ) : (
+            <p>No tienes artistas favoritos aún.</p>
+          )}
         </div>
       </div>
     </div>
