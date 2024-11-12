@@ -10,9 +10,20 @@ const Libro = sequelize.define('Libro', {
   titulo: { type: DataTypes.STRING, allowNull: false },
   autor: { type: DataTypes.STRING, allowNull: false },
   genero: { type: DataTypes.STRING },
-  estado: { type: DataTypes.ENUM('leído', 'por leer', 'favoritos', 'abandonado'), defaultValue: 'por leer' },
-  puntuacion: { type: DataTypes.INTEGER, allowNull: true },
-  reseña: { type: DataTypes.TEXT }
+  estado: { 
+    type: DataTypes.ENUM('leído', 'por leer', 'favoritos', 'abandonado'), 
+    defaultValue: 'por leer' 
+  },
+  idColeccion: {
+    type: DataTypes.INTEGER,
+    allowNull: true, 
+    references: {
+      model: 'Colecciones', 
+      key: 'id',
+    },
+  }
+}, {
+  tableName: 'libros' 
 });
 
 module.exports = Libro;

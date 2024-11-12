@@ -1,29 +1,30 @@
 const Reseña = require('../models/Review');
-const Usuario = require('../models/User');
 
 exports.createReview = async (req, res) => {
   try {
-    const reseña = await Reseña.create(req.body);
-    res.status(201).json(reseña);
+    const { libroId, contenido, puntuacion } = req.body;
+
+    if (!libroId || !contenido || !puntuacion) {
+      return res.status(400).json({ error: "Todos los campos son requeridos." });
+    }
+
+    const nuevaReseña = await Reseña.create({
+      libroId,       
+      contenido,     
+      puntuacion,   
+    });
+
+    res.status(201).json(nuevaReseña);
   } catch (error) {
+    console.error(error);  
     res.status(500).json({ error: error.message });
   }
 };
+
 
 exports.getAllReviews = async (req, res) => {
   try {
     const reseñas = await Reseña.findAll();
-    res.status(200).json(reseñas);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-exports.getReviewsByUser = async (req, res) => {
-  const usuarioId = req.params.usuarioId; 
-
-  try {
-    const reseñas = await Reseña.findAll({ where: { usuarioId } });
     res.status(200).json(reseñas);
   } catch (error) {
     res.status(500).json({ error: error.message });

@@ -1,11 +1,28 @@
 const Usuario = require('../models/User');
 
 exports.crearUsuario = async (req, res) => {
+    const { nombre, email, contrasena } = req.body;
+
+    if (!nombre || !email || !contrasena) {
+        return res.status(400).json({ error: 'Todos los campos son requeridos.' });
+    }
+
     try {
-        const nuevoUsuario = await Usuario.create(req.body);
-        res.status(201).json(nuevoUsuario);
+        const existingUser = await Usuario.findOne({ where: { email } });
+        if (existingUser) {
+            return res.status(400).json({ error: 'El email ya está registrado.' });
+        }
+
+        const nuevoUsuario = await Usuario.create({
+            nombre,
+            email,
+            contrasena,
+        });
+
+        res.status(201).json({ id: nuevoUsuario.id, nombre: nuevoUsuario.nombre, email: nuevoUsuario.email });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        console.error('Error al registrar el usuario:', error);
+        res.status(500).json({ error: 'Error al registrar el usuario.' });
     }
 };
 
@@ -39,3 +56,18 @@ exports.eliminarUsuario = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+exports.iniciarSesion = async (req, res) => {
+    const { email, contrasena } = req.body;
+    try {
+        const usuario = await Usuario.findOne({ where: { email } });
+        if (!usuario || usuario.contrasena !== contrasena) {
+            return res.status(401).json({ error: 'Credenciales inválidas.' });
+        }
+        res.status(200).json({ message: 'Inicio de sesión exitoso', usuario });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al iniciar sesión.' });
+    }
+};
+

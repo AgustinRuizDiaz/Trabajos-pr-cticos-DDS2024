@@ -1,0 +1,39 @@
+.book-detail {
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 600px; 
+    text-align: left; 
+  }
+  
+  .book-detail h2 {
+    color: #333; 
+    font-size: 24px; 
+    margin-bottom: 10px; 
+  }
+  
+  .book-detail p {
+    color: #666; 
+    font-size: 16px; 
+    margin: 5px 0; 
+  }
+  
+  .book-detail button {
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    display: block; 
+    margin-top: 20px; 
+    width: 100%; 
+  }
+  
+  .book-detail button:hover {
+    background-color: #0056b3; 
+  }
+  

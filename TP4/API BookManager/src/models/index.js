@@ -7,15 +7,6 @@ const Autor = require('./Author');
 const Coleccion = require('./Collection'); 
 const HistorialLectura = require('./Reading-History'); 
 
-Usuario.hasMany(Reseña, { foreignKey: 'usuarioId' });
-Reseña.belongsTo(Usuario, { foreignKey: 'usuarioId' });
-
-Usuario.hasMany(Recomendacion, { foreignKey: 'usuarioId' });
-Recomendacion.belongsTo(Usuario, { foreignKey: 'usuarioId' });
-
-Usuario.hasMany(Coleccion, { foreignKey: 'usuarioId' });
-Coleccion.belongsTo(Usuario, { foreignKey: 'usuarioId' });
-
 Libro.hasMany(Reseña, { foreignKey: 'libroId' });
 Reseña.belongsTo(Libro, { foreignKey: 'libroId' });
 
@@ -24,6 +15,9 @@ Recomendacion.belongsTo(Libro, { foreignKey: 'libroId' });
 
 Libro.hasMany(HistorialLectura, { foreignKey: 'libroId' });
 HistorialLectura.belongsTo(Libro, { foreignKey: 'libroId' });
+
+Coleccion.hasMany(Libro, { foreignKey: 'idColeccion', allowNull: true });
+Libro.belongsTo(Coleccion, { foreignKey: 'idColeccion', allowNull: true });
 
 module.exports = {
   sequelize,

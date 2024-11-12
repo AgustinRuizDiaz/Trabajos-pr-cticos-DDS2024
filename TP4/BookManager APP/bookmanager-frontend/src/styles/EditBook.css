@@ -1,0 +1,58 @@
+.edit-book {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-book h2 {
+  color: #333;
+  text-align: center;
+}
+
+.edit-book form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-book input,
+.edit-book select,
+.edit-book textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.edit-book input:focus,
+.edit-book select:focus,
+.edit-book textarea:focus {
+  border-color: #6200ea;
+}
+
+.edit-book button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.edit-book button:hover {
+  background-color: #3700b3;
+}
+
+.edit-book .cancel-button {
+  background-color: #f44336;
+}
+
+.edit-book .cancel-button:hover {
+  background-color: #c62828;
+}

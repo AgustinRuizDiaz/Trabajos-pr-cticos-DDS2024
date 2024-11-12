@@ -1,0 +1,124 @@
+.manage-books {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-bar {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.search-results ul {
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results li:hover {
+  background-color: #f0f0f0;
+}
+
+.welcome-title {
+  text-align: center;
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.book-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.book-sections > div {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.recommendation-section, .review-section {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.recommendation-link, .review-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.recommendation-link:hover, .review-link:hover {
+  background-color: #0056b3;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.6);
+}

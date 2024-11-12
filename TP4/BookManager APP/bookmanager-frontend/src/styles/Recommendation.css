@@ -1,0 +1,117 @@
+.recommendation-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.recommendation-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.recommendation-container h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.recommendation-container p {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+select, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  text-align: center;
+  color: #28a745;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+strong {
+  color: #007BFF;
+}
+
+li p {
+  color: #555;
+  font-size: 1rem;
+}
+
+li + li {
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .recommendation-container {
+      padding: 15px;
+  }
+  form {
+      gap: 15px;
+  }
+  button {
+      padding: 10px 15px;
+  }
+}

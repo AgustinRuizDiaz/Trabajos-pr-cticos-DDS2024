@@ -1,4 +1,4 @@
-const Recomendacion = require('../models/Recommendation');
+const { Recomendacion, Libro} = require('../models');
 
 exports.crearRecomendacion = async (req, res) => {
     try {
@@ -37,5 +37,29 @@ exports.eliminarRecomendacion = async (req, res) => {
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
+    }
+};
+
+exports.obtenerTodasRecomendaciones = async (req, res) => {
+    try {
+        const recomendaciones = await Recomendacion.findAll({
+            include: [
+                {
+                    model: Libro,
+                    attributes: ['titulo'],  
+                }
+            ]
+        });
+
+        const recomendacionesSimplificadas = recomendaciones.map(recomendacion => ({
+            libro: recomendacion.Libro ? recomendacion.Libro.titulo : 'Título no disponible',
+            razon: recomendacion.razon
+        }));
+        
+
+        res.json(recomendacionesSimplificadas); 
+    } catch (error) {
+        console.error('Error al obtener las recomendaciones:', error);
+        res.status(500).json({ message: 'Error al obtener las recomendaciones' });
     }
 };
